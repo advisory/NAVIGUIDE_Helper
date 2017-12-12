@@ -3,11 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>eab.naviguide.commons</groupId>
-  <artifactId>NAVIGUIDE_Helper</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>NAVIGUIDE_Helper</name>
+  <name>naviguide_helper</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -22,4 +21,5 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <artifactId>naviguide_helper</artifactId>
 </project>
