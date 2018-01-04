@@ -122,7 +122,7 @@ public class DBHelper {
 		try {
 			query.append("Insert into " + AutomationConfig.getProduct()
 					+ "_PORTAL (PRODUCT_NAME,RUN_TYPE,RUN_NAME,RUN_JAVA_VERSION,RUN_MACHINE_NAME,RUN_USER_NAME,RUN_USER_DIR,RUN_OS_NAME,RUN_BROWSER_NAME,RUN_BROWSER_VERSION,RUN_JAVASCRIPT_ENABLED,RUN_APP_BUILD_NUMBER,RUN_APP_URL,RUN_SELENIUM_VERSION,"
-					+ "RUN_SELENIUM_BUILD,RUN_FRAMEWORK_VERSION,RUN_RESULTS_VERSION,TEST_NAME,STEP_NAME,STEP_STATUS,STEP_PRIORITY,STEP_EXPECTED_VALUE,STEP_ACTUAL_VALUE,RUN_DASHBOASR_STATUS) values ('"
+					+ "RUN_SELENIUM_BUILD,RUN_FRAMEWORK_VERSION,RUN_RESULTS_VERSION,TEST_NAME,STEP_NAME,STEP_STATUS,STEP_PRIORITY,STEP_EXECUTION_TIME,STEP_EXPECTED_VALUE,STEP_ACTUAL_VALUE,RUN_DASHBOASR_STATUS) values ('"
 					+ AutomationConfig.getProperty("automation.product") + "','webdriver','"
 					+ AutomationConfig.getProperty("automation.run.name") + "','" + System.getProperty("java.version")
 					+ "','" + InetAddress.getLocalHost().getHostName() + "','" + System.getProperty("user.name") + "','"
@@ -131,7 +131,7 @@ public class DBHelper {
 					+ "','" + AutomationConfig.getProperty("automation.server.url") + "','" + b.getReleaseLabel()
 					+ "','" + b.getBuildRevision() + "','" + GeneralHelper.getFrameworkVersion() + "','','"
 					+ SessionUtility.getValue(AutomationConstants.REPORT_NAME) + "','" + testStep + "','" + result
-					+ "',''	,'" + expectedValue + "','" + actualValue + "','null')");
+					+ "',''	,sysdate,'" + expectedValue + "','" + actualValue + "','null')");
 
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
