@@ -11,6 +11,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/FRAMEWORK_Selenium3_4_0.jar"/>
+	<classpathentry kind="lib" path="lib/FRAMEWORK_Selenium3_4_0.jar" sourcepath="/FRAMEWORK/src"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

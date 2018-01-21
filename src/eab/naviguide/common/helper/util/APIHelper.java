@@ -22,7 +22,8 @@ public class APIHelper {
 
 			HttpURLConnection connection = (HttpURLConnection) url_obj.openConnection();
 			connection.setRequestMethod("GET");
-			connection.setRequestProperty("Authorization", token);
+			if (!token.isEmpty()) 
+				connection.setRequestProperty("Authorization", token);
 			connection.addRequestProperty("Accept", "application/json");
 			connection.setReadTimeout(15 * 1000);
 			connection.connect();
