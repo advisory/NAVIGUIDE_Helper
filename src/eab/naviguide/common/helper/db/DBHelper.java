@@ -57,7 +57,7 @@ public class DBHelper {
 			}
 			//"ssh -N -L 54321:greendale-qa.ctwppe9uq1vi.us-east-1.rds.amazonaws.com:5432 greendale@10.111.84.135 -i C:/Ranjit/Greendale &"
 			String[] commandQADBConnect = { "C:\\Program Files\\Git\\bin\\bash.exe", "-c",
-					"ssh -N -L 54321:greendale-qa.ctwppe9uq1vi.us-east-1.rds.amazonaws.com:5432 greendale@10.111.84.135 -i "
+					"ssh -N -L 54321:greendale-qa.ctwppe9uq1vi.us-east-1.rds.amazonaws.com:5432 greendale@10.111.82.106 -i "
 							+ sshFilePath + " &" };
 			if (!runCommand) {
 				//System.out.println("Executing DB connection command :\n");
@@ -74,7 +74,7 @@ public class DBHelper {
 			if (UtilHelper.runBashCommands(new String[] { "bash", "-c", "lsof -i :54321" }) == null) {
 				//System.out.println("Executing DB connection command :\n");
 				UtilHelper.runBashCommands(new String[] { "bash", "-c",
-						"ssh -N -L 54321:greendale-qa.ctwppe9uq1vi.us-east-1.rds.amazonaws.com:5432 greendale@10.111.84.135 -i "
+						"ssh -N -L 54321:greendale-qa.ctwppe9uq1vi.us-east-1.rds.amazonaws.com:5432 greendale@10.111.82.106 -i "
 								+ "~/.ssh/greendale &" });
 				while (UtilHelper.runBashCommands(new String[] { "bash", "-c", "lsof -i :54321" }) == null)
 					NavigationHelper.sleep(500);
